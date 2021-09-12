@@ -8,7 +8,8 @@
           2xl:w-1/4
           items-center
           mx-auto
-          px-0
+          px-2
+          py-4
           md:px-8 md:py-10
           bg-white
           rounded-md
@@ -20,7 +21,8 @@
           class="
             text-aerolab
             font-semibold
-            text-3xl
+            text-2xl
+            sm:text-3xl
             mb-2
             sm:mb-3
             lg:mb-4
@@ -39,7 +41,7 @@
           </div>
           <img src="../assets/icons/coin.svg" alt="" class="h-8 pt-1 ml-1" />
         </div>
-        <div class="flex flex-col w-11/12 justify-center h-10 mt-6">
+        <div class="flex flex-col w-11/12 justify-center min-h-full mt-6">
           <button
             @click="$emit('confirmRedeem', product)"
             class="
@@ -61,7 +63,7 @@
             @click="$emit('toggleModal')"
             class="
               px-3
-              py-1
+              py-1              
               w-11/12
               mx-auto
               font-bold

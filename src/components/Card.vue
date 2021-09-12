@@ -37,11 +37,13 @@
             src="../assets/icons/buy-blue.svg"
             alt=""
             class="block group-hover:hidden"
+            @click="redeem(product)"
           />
           <img
             src="../assets/icons/buy-white.svg"
             alt=""
             class="hidden group-hover:block"
+            @click="redeem(product)"
           />
         </button>
         <div
@@ -92,15 +94,15 @@
           @click="redeem(product)"
           class="
             flex
-            align-center
             justify-center
+            items-center	
             rounded-3xl
             bg-gray-300
             hover:bg-gray-200
             duration-500
             font-semibold
             w-10/12
-            h-7
+            h-8
             sm:h-8 sm:text-sm sm:py-2 sm:w-11/12
             md:h-10 md:text-lg md:mt-2
             lg:text-xl
@@ -184,9 +186,9 @@ export default {
       if (filter.value == "") {
         return data.products;
       } else if (filter.value == "highestPrice") {
-        return data.products.slice(0, data.products.length/2).sort((a, b) => b.cost - a.cost);
+        return data.products.slice(0).sort((a, b) => b.cost - a.cost);
       } else if (filter.value == "lowestPrice") {
-        return data.products.slice(0, data.products.length/2).sort((a, b) => a.cost - b.cost);
+        return data.products.slice(0).sort((a, b) => a.cost - b.cost);
       }
       return data.products;
     });
